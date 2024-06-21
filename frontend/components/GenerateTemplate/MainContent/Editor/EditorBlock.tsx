@@ -1,9 +1,7 @@
 import { useState } from "react"
 import { IFunction } from "@/api/generated"
-import {
-  GripVertical,
-  Trash2Icon,
-} from "lucide-react"
+import { Reorder, motion, useDragControls } from "framer-motion"
+import { GripVertical, Trash2Icon } from "lucide-react"
 import { Control, FieldValues } from "react-hook-form"
 
 import { Button } from "@/components/ui/button"
@@ -14,10 +12,9 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
+import ShowMinimizeButton from "@/components/common/ShowMinimizeButton"
 
 import InputGenerator from "./Factory/InputGenerator"
-import ShowMinimizeButton from "@/components/common/ShowMinimizeButton"
-import { Reorder, motion, useDragControls } from "framer-motion"
 
 const EditorBlock = ({
   block,
@@ -33,11 +30,13 @@ const EditorBlock = ({
 
   const contentVariants = {
     hidden: { opacity: 0, height: 0 },
-    visible: { opacity: 1, height: 'auto' },
-  };
+    visible: { opacity: 1, height: "auto" },
+  }
 
   return (
-    <Reorder.Item value={block} key={block.name}
+    <Reorder.Item
+      value={block}
+      key={block.name}
       id={block.name}
       dragListener={false}
       dragControls={controls}
@@ -47,7 +46,9 @@ const EditorBlock = ({
     >
       <Card
         id="editor-block"
-        className={`p-4 transition-transform duration-300 transform ${isMinimized && "hover:scale-[1.02]"}`}
+        className={`p-4 transition-transform duration-300${
+          isMinimized && "hover:scale-[1.02]"
+        }`}
       >
         <CardHeader>
           <div className="flex items-start justify-between gap-6">
@@ -59,22 +60,28 @@ const EditorBlock = ({
               <Button
                 variant={"outline"}
                 className="text-red-500"
-                onClick={() => deleteBlock()}>
+                onClick={() => deleteBlock()}
+              >
                 <Trash2Icon className="mr-2" />
                 Delete
               </Button>
 
-              <ShowMinimizeButton isMinimized={isMinimized} setIsMinimized={setIsMinimized} />
+              <ShowMinimizeButton
+                isMinimized={isMinimized}
+                setIsMinimized={setIsMinimized}
+              />
 
-              <div onPointerDown={(event) => {
-                controls.start(event)
-                event.preventDefault();
-              }} className="cursor-grab">
+              <div
+                onPointerDown={(event) => {
+                  controls.start(event)
+                  event.preventDefault()
+                }}
+                className="cursor-grab"
+              >
                 <GripVertical />
               </div>
             </div>
           </div>
-
         </CardHeader>
 
         <motion.div
@@ -97,7 +104,7 @@ const EditorBlock = ({
           </CardContent>
         </motion.div>
       </Card>
-    </Reorder.Item >
+    </Reorder.Item>
   )
 }
 

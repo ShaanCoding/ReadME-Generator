@@ -13,7 +13,10 @@ const TextField: React.FC<ITextFieldProps> = ({ variables, control }) => {
       defaultValue={variables.defaultValue as string}
       render={({ field }) => (
         <div className="w-full pb-4">
-          <ContextTitle title={variables.label} description={variables.description} />
+          <ContextTitle
+            title={variables.label}
+            description={variables.description}
+          />
           <AutosizeTextarea {...field} name={variables.name} minHeight={100} />
         </div>
       )}

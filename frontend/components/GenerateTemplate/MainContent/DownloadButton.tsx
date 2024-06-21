@@ -1,9 +1,9 @@
 import React from "react"
 import { CheckIcon, DownloadIcon } from "lucide-react"
+import { set } from "react-hook-form"
 import { twMerge } from "tailwind-merge"
 
 import { Button } from "@/components/ui/button"
-import { set } from "react-hook-form"
 
 const DownloadButton: React.FC<{
   downloadText: string
@@ -33,7 +33,6 @@ const DownloadButton: React.FC<{
         }, 2000)
       }}
     >
-
       {isDownloaded ? (
         <CheckIcon className="mr-2 size-4" />
       ) : (

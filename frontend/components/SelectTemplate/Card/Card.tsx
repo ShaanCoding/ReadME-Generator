@@ -1,3 +1,4 @@
+import { useState } from "react"
 import Link from "next/link"
 import { ITemplate } from "@/api/generated"
 
@@ -8,14 +9,16 @@ import {
   CardFooter,
   Card as UICard,
 } from "../../ui/card"
+import PreviewModal from "../PreviewModal/PreviewModal"
 import CardContributors from "./CardContributors"
 import CardDescriptions from "./CardDescriptions"
 import CardHeader from "./CardHeader"
 import CardTags from "./CardTags"
-import PreviewModal from "../PreviewModal/PreviewModal"
-import { useState } from "react"
 
-export const Card: React.FC<{ cardData: Omit<ITemplate, "functions" | "image">, addCategoryToSidebar?: (value: string) => void }> = ({
+export const Card: React.FC<{
+  cardData: Omit<ITemplate, "functions" | "image">
+  addCategoryToSidebar?: (value: string) => void
+}> = ({
   cardData: {
     title,
     author,
@@ -27,7 +30,7 @@ export const Card: React.FC<{ cardData: Omit<ITemplate, "functions" | "image">, 
     lastUpdated,
     folder,
   },
-  addCategoryToSidebar
+  addCategoryToSidebar,
 }) => {
   const [modalOpen, setModalOpen] = useState<boolean>(false)
 
@@ -39,14 +42,12 @@ export const Card: React.FC<{ cardData: Omit<ITemplate, "functions" | "image">, 
         <CardTags tags={tags} addCategoryToSidebar={addCategoryToSidebar} />
         <CardContributors contributors={contributors} />
 
-        <div className="grid items-center justify-center grid-cols-1 lg:grid-cols-2 gap-y-6 lg:gap-y-0 lg:gap-x-6">
+        <div className="grid grid-cols-1 items-center justify-center gap-y-6 lg:grid-cols-2 lg:gap-x-6 lg:gap-y-0">
           <PreviewModal
             folder={folder}
             templateTitle={`${title}`}
             modalOpen={modalOpen}
-            setModalOpen={
-              (open: boolean) => setModalOpen(open)
-            }
+            setModalOpen={(open: boolean) => setModalOpen(open)}
           />
 
           <Link href={`/generator/${folder}`}>

@@ -3,7 +3,6 @@
 /* tslint:disable */
 /* eslint-disable */
 export type ISideBarOptions = {
-    label: string;
-    value: string;
-};
-
+  label: string
+  value: string
+}

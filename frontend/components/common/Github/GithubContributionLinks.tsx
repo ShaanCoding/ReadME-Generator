@@ -1,14 +1,21 @@
-import Link from "next/link";
-import React from "react";
-import { IGithubContributionsList, IIssueType, IPullRequestType } from "@/api/generated";
-import ContributionIcon from "../../Contributors/ContributorIcon";
+import React from "react"
+import Link from "next/link"
+import {
+  IGithubContributionsList,
+  IIssueType,
+  IPullRequestType,
+} from "@/api/generated"
 
-const GithubContributionLinks: React.FC<{ githubLinks: IGithubContributionsList[] }> = ({ githubLinks }) => {
+import ContributionIcon from "../../Contributors/ContributorIcon"
+
+const GithubContributionLinks: React.FC<{
+  githubLinks: IGithubContributionsList[]
+}> = ({ githubLinks }) => {
   if (githubLinks.length === 0) return null
 
   return (
     <div>
-      <h2 className="text-2xl font-semibold mb-2">Contributions</h2>
+      <h2 className="mb-2 text-2xl font-semibold">Contributions</h2>
       <div>
         {githubLinks.map((link, key) => {
           return (
@@ -16,7 +23,9 @@ const GithubContributionLinks: React.FC<{ githubLinks: IGithubContributionsList[
               <Link href={link.url}>
                 <div className="flex flex-row text-blue-500 hover:underline">
                   <div className="pr-2">
-                    <ContributionIcon iconType={link.type as IPullRequestType | IIssueType} />
+                    <ContributionIcon
+                      iconType={link.type as IPullRequestType | IIssueType}
+                    />
                   </div>
                   <p>{link.name}</p>
                 </div>
@@ -29,4 +38,4 @@ const GithubContributionLinks: React.FC<{ githubLinks: IGithubContributionsList[
   )
 }
 
-export default GithubContributionLinks;
+export default GithubContributionLinks

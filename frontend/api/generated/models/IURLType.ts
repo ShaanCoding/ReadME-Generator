@@ -3,10 +3,10 @@
 /* tslint:disable */
 /* eslint-disable */
 export enum IURLType {
-    FACEBOOK = 'Facebook',
-    INSTAGRAM = 'Instagram',
-    TWITTER = 'Twitter',
-    GITHUB = 'Github',
-    LINKED_IN = 'LinkedIn',
-    OTHER = 'Other',
+  FACEBOOK = "Facebook",
+  INSTAGRAM = "Instagram",
+  TWITTER = "Twitter",
+  GITHUB = "Github",
+  LINKED_IN = "LinkedIn",
+  OTHER = "Other",
 }

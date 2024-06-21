@@ -1,35 +1,36 @@
-import { EditModeOne, EditModeTwo, EditModeThree } from '../types';
+import { EditModeOne, EditModeThree, EditModeTwo } from "../types"
 
-const editModeBooleans = (editMode: EditModeOne | EditModeTwo | EditModeThree) => {
-
-  let showEditor: boolean = false;
+const editModeBooleans = (
+  editMode: EditModeOne | EditModeTwo | EditModeThree
+) => {
+  let showEditor: boolean = false
   let showPreview: boolean = false
-  let showRawText: boolean = false;
+  let showRawText: boolean = false
 
   if (editMode === EditModeOne.EDIT) {
-    showEditor = true;
+    showEditor = true
   }
 
   if (editMode === EditModeOne.PREVIEW) {
-    showPreview = true;
+    showPreview = true
   }
 
   if (editMode === EditModeOne.RAW) {
-    showRawText = true;
+    showRawText = true
   }
 
   if (editMode === EditModeTwo.EDIT_PREVIEW) {
-    showEditor = true;
-    showPreview = true;
+    showEditor = true
+    showPreview = true
   }
 
   if (editMode === EditModeThree.ALL) {
-    showEditor = true;
-    showPreview = true;
-    showRawText = true;
+    showEditor = true
+    showPreview = true
+    showRawText = true
   }
 
   return { showEditor, showPreview, showRawText }
 }
 
-export default editModeBooleans;
+export default editModeBooleans

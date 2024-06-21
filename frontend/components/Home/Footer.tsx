@@ -9,7 +9,7 @@ const Footer = () => {
     mt-20 w-full rounded-t-[30px] bg-gradient-to-t
     from-[#16474A] to-[#16474A40] px-6 pb-6 pt-20 xl:px-[80px]"
     >
-      <div className="flex flex-col lg:flex-row items-start justify-start lg:justify-between">
+      <div className="flex flex-col items-start justify-start lg:flex-row lg:justify-between">
         <div className="pb-6">
           <h1 className="text-xl font-semibold">{siteConfig.footer.title}</h1>
           <p className="text-lg">{siteConfig.footer.description}</p>

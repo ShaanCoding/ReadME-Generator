@@ -3,7 +3,6 @@
 /* tslint:disable */
 /* eslint-disable */
 export type IDefaultBlockInput = {
-    function: string;
-    folder: string;
-};
-
+  function: string
+  folder: string
+}

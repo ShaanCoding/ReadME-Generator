@@ -8,6 +8,7 @@ import {
 import { useQuery } from "@tanstack/react-query"
 import { useDebounce } from "use-debounce"
 
+import { api } from "@/lib/apiWrapper"
 import { Input } from "@/components/ui/input"
 import {
   MultiSelector,
@@ -17,7 +18,6 @@ import {
   MultiSelectorList,
   MultiSelectorTrigger,
 } from "@/components/ui/multiselect"
-import { api } from "@/lib/apiWrapper"
 
 interface IOption {
   label: string
@@ -29,7 +29,12 @@ const SelectTemplateSideBar: React.FC<{
   pageType: IPageType
   multiSelectValue: string[]
   setMultiSelectValue: Dispatch<SetStateAction<string[]>>
-}> = ({ pageType, setTemplateBlocks, multiSelectValue, setMultiSelectValue }) => {
+}> = ({
+  pageType,
+  setTemplateBlocks,
+  multiSelectValue,
+  setMultiSelectValue,
+}) => {
   const [search, setSearch] = useState<string>("")
   const [searchDebounced] = useDebounce<string>(search, 500)
 
@@ -52,8 +57,7 @@ const SelectTemplateSideBar: React.FC<{
   const sidebarOptions = useQuery({
     queryKey: ["getV1TemplateGetAllSidebar", search],
     queryFn: async () => {
-      let request =
-        await api.sidebar.getV1SidebarAllOptions()
+      let request = await api.sidebar.getV1SidebarAllOptions()
 
       return request.responseObject as IOption[]
     },
@@ -78,8 +82,8 @@ const SelectTemplateSideBar: React.FC<{
   }, [templateMaps.status, templateMaps.data])
 
   return (
-    <div className="bg-muted/40 mb-4 hidden rounded-br-lg border md:block xl:mb-6">
-      <nav className="my-6 grid gap-6 items-start px-2 text-sm font-medium lg:px-4">
+    <div className="mb-4 hidden rounded-br-lg border bg-muted/40 md:block xl:mb-6">
+      <nav className="my-6 grid items-start gap-6 px-2 text-sm font-medium lg:px-4">
         <Input
           placeholder="Search blocks"
           value={search}

@@ -20,6 +20,10 @@ export const siteConfig = {
     {
       title: "Contributors",
       href: "/contributors",
+    },
+    {
+      title: "Articles",
+      href: "/articles",
     }
   ],
   links: {
@@ -47,7 +51,7 @@ export const siteConfig = {
       {
         title: "Contributors",
         href: "/contributors",
-      }
+      },
     ],
     socialMedia: [
       {

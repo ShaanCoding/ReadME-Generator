@@ -3,11 +3,11 @@
 /* tslint:disable */
 /* eslint-disable */
 export enum IVariableType {
-    INPUT = 'input',
-    TEXT_AREA = 'textArea',
-    CHECK_BOX = 'checkBox',
-    LIST = 'list',
-    OBJECT = 'object',
-    SELECT = 'select',
-    RADIO = 'radio',
+  INPUT = "input",
+  TEXT_AREA = "textArea",
+  CHECK_BOX = "checkBox",
+  LIST = "list",
+  OBJECT = "object",
+  SELECT = "select",
+  RADIO = "radio",
 }

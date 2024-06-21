@@ -3,15 +3,14 @@
 /* tslint:disable */
 /* eslint-disable */
 export type IVariableTextArea = {
-    label: string;
-    name: string;
-    description?: string;
-    defaultValue: string;
-    _type: IVariableTextArea._type;
-};
-export namespace IVariableTextArea {
-    export enum _type {
-        TEXT_AREA = 'textArea',
-    }
+  label: string
+  name: string
+  description?: string
+  defaultValue: string
+  _type: IVariableTextArea._type
 }
-
+export namespace IVariableTextArea {
+  export enum _type {
+    TEXT_AREA = "textArea",
+  }
+}

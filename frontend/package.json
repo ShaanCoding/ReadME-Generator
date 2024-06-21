@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "node server.js",
+    "build": "contentlayer2 build && next build",
+    "start": "next start",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
     "preview": "next build && next start",
@@ -15,6 +15,8 @@
     "generate": "node scripts/generate.js"
   },
   "dependencies": {
+    "@mdx-js/esbuild": "^3.0.1",
+    "@next/mdx": "^14.2.4",
     "@radix-ui/react-alert-dialog": "^1.0.5",
     "@radix-ui/react-avatar": "^1.0.4",
     "@radix-ui/react-checkbox": "^1.0.4",
@@ -32,9 +34,13 @@
     "class-variance-authority": "^0.4.0",
     "clsx": "^1.2.1",
     "cmdk": "^1.0.0",
+    "contentlayer2": "^0.4.6",
+    "date-fns": "^3.6.0",
     "framer-motion": "^11.1.7",
     "lucide-react": "*",
+    "mdast-util-gfm-table": "^2.0.0",
     "next": "^13.4.8",
+    "next-contentlayer": "^0.3.4",
     "next-plausible": "^3.12.0",
     "next-themes": "^0.2.1",
     "nunjucks": "^3.2.4",
@@ -42,15 +48,21 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.51.2",
-    "react-markdown": "^9.0.1",
+    "rehype": "^13.0.1",
+    "rehype-autolink-headings": "^7.1.0",
+    "rehype-pretty-code": "^0.13.2",
     "rehype-raw": "^7.0.0",
-    "remark": "^15.0.1",
-    "remark-gfm": "^4.0.0",
-    "remark-html": "^16.0.1",
+    "rehype-react": "^8.0.0",
+    "rehype-slug": "^6.0.0",
+    "remark": "15.0.1",
+    "remark-gfm": "4.0.0",
+    "remark-parse": "^11.0.0",
     "rimraf": "^5.0.5",
     "sharp": "^0.32.6",
+    "shiki": "1.7.0",
     "tailwind-merge": "^1.13.2",
     "tailwindcss-animate": "^1.0.6",
+    "unified": "^11.0.5",
     "use-debounce": "^10.0.0"
   },
   "devDependencies": {
@@ -68,6 +80,6 @@
     "postcss": "^8.4.24",
     "prettier": "^2.8.8",
     "tailwindcss": "^3.3.2",
-    "typescript": "^4.9.5"
+    "typescript": "^5.5.2"
   }
 }

@@ -1,8 +1,9 @@
-import React from 'react'
-import ReadMEGeneratorPage from './[...id]/page'
+import React from "react"
+
+import ReadMEGeneratorPage from "./[...id]/page"
 
 const page = () => {
-    return <ReadMEGeneratorPage />
+  return <ReadMEGeneratorPage />
 }
 
 export default page

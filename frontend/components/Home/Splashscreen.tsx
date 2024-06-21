@@ -1,13 +1,11 @@
 "use client"
 
 import Link from "next/link"
+import { motion } from "framer-motion"
 
 import { siteConfig } from "@/config/site"
 
 import { Button } from "../ui/button"
-
-import { motion } from 'framer-motion';
-
 
 const Splashscreen = () => {
   return (
@@ -17,7 +15,7 @@ const Splashscreen = () => {
           className="pb-12 lg:flex lg:w-1/3 lg:items-start lg:justify-end lg:pb-0 xl:w-1/2"
           viewport={{ once: true, amount: 0.5 }}
           initial={{ opacity: 0, x: 100 }}
-          transition={{ type: 'spring', stiffness: 50 }}
+          transition={{ type: "spring", stiffness: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
         >
           <img
@@ -31,7 +29,7 @@ const Splashscreen = () => {
           className="lg:w-2/3 xl:w-1/2"
           viewport={{ once: true, amount: 0.5 }}
           initial={{ opacity: 0, x: -100 }}
-          transition={{ type: 'spring', stiffness: 50 }}
+          transition={{ type: "spring", stiffness: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
         >
           <h2 className="pb-2 text-xl font-semibold">
@@ -47,11 +45,10 @@ const Splashscreen = () => {
             </Button>
           </Link>
         </motion.div>
-
       </div>
       <div
-        className="bg-themeGreen absolute
-          left-[10%] top-0 z-[-1] size-full translate-x-[-50%] translate-y-[-50%] rounded-[780px] opacity-80 blur-[350px]"
+        className="absolute left-[10%]
+          top-0 z-[-1] size-full translate-x-[-50%] translate-y-[-50%] rounded-[780px] bg-themeGreen opacity-80 blur-[350px]"
       ></div>
     </div>
   )

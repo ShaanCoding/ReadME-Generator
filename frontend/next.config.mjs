@@ -9,14 +9,14 @@ const nextConfig = withPlausibleProxy()({
         hostname: "source.unsplash.com",
       },
       {
-        hostname: "github.com"
+        hostname: "github.com",
       },
       {
-        hostname: "avatars.githubusercontent.com"
-      }
+        hostname: "avatars.githubusercontent.com",
+      },
     ],
   },
-  output: "standalone"
+  // output: "standalone"
 })
 
 export default nextConfig

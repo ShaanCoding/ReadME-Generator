@@ -3,20 +3,19 @@
 /* tslint:disable */
 /* eslint-disable */
 export type IUser = {
-    name: string;
-    url: {
-        url: string;
-        _type: IUser._type;
-    };
-};
-export namespace IUser {
-    export enum _type {
-        FACEBOOK = 'Facebook',
-        INSTAGRAM = 'Instagram',
-        TWITTER = 'Twitter',
-        GITHUB = 'Github',
-        LINKED_IN = 'LinkedIn',
-        OTHER = 'Other',
-    }
+  name: string
+  url: {
+    url: string
+    _type: IUser._type
+  }
 }
-
+export namespace IUser {
+  export enum _type {
+    FACEBOOK = "Facebook",
+    INSTAGRAM = "Instagram",
+    TWITTER = "Twitter",
+    GITHUB = "Github",
+    LINKED_IN = "LinkedIn",
+    OTHER = "Other",
+  }
+}

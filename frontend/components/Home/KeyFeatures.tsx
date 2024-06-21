@@ -2,16 +2,16 @@
 
 import React from "react"
 import Image from "next/image"
+import { motion } from "framer-motion"
 
 import { siteConfig } from "@/config/site"
-import { motion } from "framer-motion"
 
 const KeyFeatures = () => {
   return (
-    <div className="my-5 relative">
+    <div className="relative my-5">
       <div>
         <div className="mb-12 text-center">
-          <h2 className="text-themeGreen font-semibold">Features</h2>
+          <h2 className="font-semibold text-themeGreen">Features</h2>
           <h1 className="text-6xl font-bold text-white">Key Features</h1>
         </div>
 
@@ -27,9 +27,9 @@ const KeyFeatures = () => {
               opacity: 1,
               transition: {
                 delayChildren: 0.3,
-                staggerChildren: 0.2
-              }
-            }
+                staggerChildren: 0.2,
+              },
+            },
           }}
         >
           {siteConfig.homePage.keyFeatures.map(
@@ -42,7 +42,7 @@ const KeyFeatures = () => {
                     visible: {
                       y: 0,
                       opacity: 1,
-                    }
+                    },
                   }}
                 >
                   <FeatureGridElement
@@ -58,8 +58,8 @@ const KeyFeatures = () => {
         </motion.div>
       </div>
       <div
-        className="bg-themeGreen absolute
-          left-[50%] top-[50%] z-[-1] size-[75%] translate-x-[-50%] translate-y-[-50%] rounded-[780px] opacity-45 blur-[350px]"
+        className="absolute left-[50%]
+          top-[50%] z-[-1] size-[75%] translate-x-[-50%] translate-y-[-50%] rounded-[780px] bg-themeGreen opacity-45 blur-[350px]"
       ></div>
     </div>
   )
@@ -87,7 +87,7 @@ const FeatureGridElement: React.FC<IFeatureGridElement> = ({
           height={100}
         />
       </div>
-      <h3 className="font-poppins text-homeBlue mb-4 text-base font-semibold">
+      <h3 className="font-poppins mb-4 text-base font-semibold text-homeBlue">
         {title}
       </h3>
       <p className="tex-twhite font-poppins mb-4 text-sm font-light leading-[175%]">
